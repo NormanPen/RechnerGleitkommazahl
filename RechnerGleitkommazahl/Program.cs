@@ -12,12 +12,12 @@ namespace RechnerGleitkommazahl
             Console.WriteLine("Bitte gib einen zweiten Summanden ein: ");
             string zweiterSummand = Console.ReadLine();
 
-            // Wandel Text in Ganzzahl
-            int ersterSummandAlsZahl = Convert.ToInt32(ersterSummand);
-            int zweiterSummandAlsZahl = Convert.ToInt32(zweiterSummand);
+            // Wandel Text in Gleitkommazahl
+            float ersterSummandAlsZahl = Convert.ToSingle(ersterSummand);
+            float zweiterSummandAlsZahl = Convert.ToSingle(zweiterSummand);
 
             //Berechnung ausführen
-            int summe = ersterSummandAlsZahl + zweiterSummandAlsZahl;
+            float summe = ersterSummandAlsZahl + zweiterSummandAlsZahl;
 
             // Ausgabe
             Console.WriteLine("Die Summe ist: {0}", summe);
