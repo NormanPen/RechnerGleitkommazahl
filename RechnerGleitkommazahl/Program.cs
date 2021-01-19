@@ -13,14 +13,30 @@ namespace RechnerGleitkommazahl
             string zweiterSummand = Console.ReadLine();
 
             // Wandel Text in Gleitkommazahl
-            float ersterSummandAlsZahl = Convert.ToSingle(ersterSummand);
-            float zweiterSummandAlsZahl = Convert.ToSingle(zweiterSummand);
+            double ersterSummandAlsZahl = Convert.ToSingle(ersterSummand);
+            double zweiterSummandAlsZahl = Convert.ToSingle(zweiterSummand);
 
             //Berechnung ausführen
-            float summe = ersterSummandAlsZahl + zweiterSummandAlsZahl;
+            double summe = Addiere(ersterSummandAlsZahl, zweiterSummandAlsZahl);
 
             // Ausgabe
             Console.WriteLine("Die Summe ist: {0}", summe);
+            WarteAufBenutzerEingabe();
+
+          
+        }
+
+        static double Addiere(double ersterSummand, double zweiterSummand)
+        {
+            double summe = ersterSummand + zweiterSummand;
+
+            return summe;
+        }
+
+        static void WarteAufBenutzerEingabe()
+        {
+            Console.Write("Zum beenden bitte Return drücken!");
+            Console.ReadLine();
         }
     }
 }
