@@ -33,6 +33,13 @@ namespace RechnerGleitkommazahl
             return summe;
         }
 
+        static double Subtraiere(double ersterSummand, double zweiterSummand)
+        {
+            double summe = ersterSummand - zweiterSummand;
+
+            return summe;
+        }
+
         static void WarteAufBenutzerEingabe()
         {
             Console.Write("Zum beenden bitte Return drücken!");
