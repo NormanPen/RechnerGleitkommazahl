@@ -4,13 +4,12 @@ namespace RechnerGleitkommazahl
 {
     class Program
     {
+        
         static void Main(string[] args)
         {
             // User Story "Addieren": Als Benutzer möchte ich zwei Zahlen eingeben, um deren Summe berechnen zu lassen.
-            Console.WriteLine("Bitte gib den ersten Summanden ein: ");
-            string ersterSummand = Console.ReadLine();
-            Console.WriteLine("Bitte gib einen zweiten Summanden ein: ");
-            string zweiterSummand = Console.ReadLine();
+            string ersterSummand = HoleSummanden("Bitte gib den ersten Summanden ein: ");
+            string zweiterSummand = HoleSummanden("Bitte gib einen zweiten Summanden ein: ");
 
             // Wandel Text in Gleitkommazahl
             double ersterSummandAlsZahl = Convert.ToSingle(ersterSummand);
@@ -24,6 +23,13 @@ namespace RechnerGleitkommazahl
             WarteAufBenutzerEingabe();
 
           
+        }
+        static string HoleSummanden(string ausgabeText)
+        {
+            Console.Write(ausgabeText);
+            string summand = Console.ReadLine();
+
+            return summand;
         }
 
         static double Addiere(double ersterSummand, double zweiterSummand)
