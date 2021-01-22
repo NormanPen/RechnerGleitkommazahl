@@ -39,11 +39,11 @@ namespace RechnerGleitkommazahl
             return summe;
         }
 
-        static double Subtraiere(double ersterSummand, double zweiterSummand)
+        static double Subtrahiere(double minuend, double subtrahent)
         {
-            double summe = ersterSummand - zweiterSummand;
+            double differenz = minuend - subtrahent;
 
-            return summe;
+            return differenz;
         }
 
         static void WarteAufBenutzerEingabe()
