@@ -8,23 +8,40 @@ namespace RechnerGleitkommazahl
         static void Main(string[] args)
         {
             // User Story "Addieren": Als Benutzer möchte ich zwei Zahlen eingeben, um deren Summe berechnen zu lassen.
-            string ersterSummand = HoleSummanden("Bitte gib den ersten Summanden ein: ");
-            string zweiterSummand = HoleSummanden("Bitte gib einen zweiten Summanden ein: ");
+            string ersterSummand = HoleBenutzerEingabe("Bitte gib die erste Zahl ein: ");
+            string zweiterSummand = HoleBenutzerEingabe("Bitte gib eine Zahl ein: ");
+            string operation = HoleBenutzerEingabe("Bitte gib die asuzuführende Operation ein (+ oder -): ");
 
             // Wandel Text in Gleitkommazahl
-            double ersterSummandAlsZahl = Convert.ToSingle(ersterSummand);
-            double zweiterSummandAlsZahl = Convert.ToSingle(zweiterSummand);
+            // TODO: Auslagern in Methode, wenn Struktur umfangreicher geworden ist.
+            double ersteZahl = Convert.ToDouble(ersterSummand);
+            double zweiteZahl = Convert.ToDouble(zweiterSummand);
 
             //Berechnung ausführen
-            double summe = Addiere(ersterSummandAlsZahl, zweiterSummandAlsZahl);
+            double resultat = 0;
+            if (operation == "+")
+            {
+                resultat = Addiere(ersteZahl, zweiteZahl);
+                Console.WriteLine("Die Summe ist: {0}", resultat);
+
+            }
+            else if (operation == "-")
+            {
+                resultat = Subtrahiere(ersteZahl, zweiteZahl);
+                Console.WriteLine("Die Differenz ist: {0}", resultat);
+            }
+            else
+            {
+                Console.WriteLine("Du hast eine ungültige Auswahl getroffen");
+            }
+            
 
             // Ausgabe
-            Console.WriteLine("Die Summe ist: {0}", summe);
-            WarteAufBenutzerEingabe();
+            HoleBenutzerEingabe("Zum beenden bitte Return drücken!");
 
           
         }
-        static string HoleSummanden(string ausgabeText)
+        static string HoleBenutzerEingabe(string ausgabeText)
         {
             Console.Write(ausgabeText);
             string summand = Console.ReadLine();
@@ -46,10 +63,6 @@ namespace RechnerGleitkommazahl
             return differenz;
         }
 
-        static void WarteAufBenutzerEingabe()
-        {
-            Console.Write("Zum beenden bitte Return drücken!");
-            Console.ReadLine();
-        }
+
     }
 }
