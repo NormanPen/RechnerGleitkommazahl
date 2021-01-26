@@ -30,8 +30,12 @@ namespace RechnerGleitkommazahl
                     Console.WriteLine("Die Differenz ist: {0}", resultat);
                     break;
                 case "/":
+                    resultat = Dividieren(ersteZahl, zweiteZahl);
+                    Console.WriteLine("Die Summe ist: {0}", resultat);
+                    break;
                 case "*":
-                    Console.WriteLine("Diese Operation wird noch nicht unterstützt");
+                    resultat = Multipizieren(ersteZahl, zweiteZahl);
+                    Console.WriteLine("Die Summe ist: {0}", resultat);
                     break;
                 default:
                     Console.WriteLine("Du hast eine ungültige Auswahl getroffen");
@@ -62,6 +66,18 @@ namespace RechnerGleitkommazahl
         static double Subtrahiere(double minuend, double subtrahent)
         {
             double differenz = minuend - subtrahent;
+
+            return differenz;
+        }
+        static double Multipizieren(double minuend, double subtrahent)
+        {
+            double differenz = minuend * subtrahent;
+
+            return differenz;
+        }
+        static double Dividieren(double minuend, double subtrahent)
+        {
+            double differenz = minuend / subtrahent;
 
             return differenz;
         }
