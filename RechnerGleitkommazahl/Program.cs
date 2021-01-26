@@ -18,6 +18,23 @@ namespace RechnerGleitkommazahl
             double zweiteZahl = Convert.ToDouble(zweiterSummand);
 
             //Berechnung ausführen
+            double resultat = Berechnung(ersteZahl, zweiteZahl, operation);
+
+
+            // Ausgabe
+            HoleBenutzerEingabe("Zum beenden bitte Return drücken!");
+
+
+        }
+        static string HoleBenutzerEingabe(string ausgabeText)
+        {
+            Console.Write(ausgabeText);
+            string summand = Console.ReadLine();
+
+            return summand;
+        }
+        static double Berechnung(double ersteZahl, double zweiteZahl, string operation)
+        {
             double resultat = 0;
             switch (operation)
             {
@@ -41,20 +58,9 @@ namespace RechnerGleitkommazahl
                     Console.WriteLine("Du hast eine ungültige Auswahl getroffen");
                     break;
             }
-
-
-            // Ausgabe
-            HoleBenutzerEingabe("Zum beenden bitte Return drücken!");
-
-          
+            return resultat;
         }
-        static string HoleBenutzerEingabe(string ausgabeText)
-        {
-            Console.Write(ausgabeText);
-            string summand = Console.ReadLine();
-
-            return summand;
-        }
+  
 
         static double Addiere(double ersterSummand, double zweiterSummand)
         {
