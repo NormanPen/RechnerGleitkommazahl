@@ -10,7 +10,7 @@ namespace RechnerGleitkommazahl
             // User Story "Addieren": Als Benutzer möchte ich zwei Zahlen eingeben, um deren Summe berechnen zu lassen.
             string ersterSummand = HoleBenutzerEingabe("Bitte gib die erste Zahl ein: ");
             string zweiterSummand = HoleBenutzerEingabe("Bitte gib eine Zahl ein: ");
-            string operation = HoleBenutzerEingabe("Bitte gib die asuzuführende Operation ein (+ oder -): ");
+            string operation = HoleBenutzerEingabe("Bitte gib die asuzuführende Operation ein (+, -, /,oder *): ");
 
             // Wandel Text in Gleitkommazahl
             // TODO: Auslagern in Methode, wenn Struktur umfangreicher geworden ist.
@@ -18,13 +18,37 @@ namespace RechnerGleitkommazahl
             double zweiteZahl = Convert.ToDouble(zweiterSummand);
 
             //Berechnung ausführen
-            double resultat = Berechnung(ersteZahl, zweiteZahl, operation);
+            RechnerModel model = new RechnerModel();
+            model.Berechne(ersteZahl, zweiteZahl, operation);
 
 
             // Ausgabe
+            GibResultatAus(model.Resultat, operation);
             HoleBenutzerEingabe("Zum beenden bitte Return drücken!");
 
 
+        }
+
+        static void GibResultatAus(double resultat, string operation)
+        {
+            switch (operation)
+            {
+                case "+":
+                    Console.WriteLine("Die Summe ist: {0}", resultat);
+                    break;
+                case "-":
+                    Console.WriteLine("Die Summe ist: {0}", resultat);
+                    break;
+                case "/":
+                    Console.WriteLine("Die Summe ist: {0}", resultat);
+                    break;
+                case "*":
+                    Console.WriteLine("Die Summe ist: {0}", resultat);
+                    break;
+                default:
+                    Console.WriteLine("Du hast eine ungültige Auswahl gestroffen.");
+                    break;
+            }
         }
         static string HoleBenutzerEingabe(string ausgabeText)
         {
@@ -33,60 +57,7 @@ namespace RechnerGleitkommazahl
 
             return summand;
         }
-        static double Berechnung(double ersteZahl, double zweiteZahl, string operation)
-        {
-            double resultat = 0;
-            switch (operation)
-            {
-                case "+":
-                    resultat = Addiere(ersteZahl, zweiteZahl);
-                    Console.WriteLine("Die Summe ist: {0}", resultat);
-                    break;
-                case "-":
-                    resultat = Subtrahiere(ersteZahl, zweiteZahl);
-                    Console.WriteLine("Die Differenz ist: {0}", resultat);
-                    break;
-                case "/":
-                    resultat = Dividieren(ersteZahl, zweiteZahl);
-                    Console.WriteLine("Die Summe ist: {0}", resultat);
-                    break;
-                case "*":
-                    resultat = Multipizieren(ersteZahl, zweiteZahl);
-                    Console.WriteLine("Die Summe ist: {0}", resultat);
-                    break;
-                default:
-                    Console.WriteLine("Du hast eine ungültige Auswahl getroffen");
-                    break;
-            }
-            return resultat;
-        }
-  
-
-        static double Addiere(double ersterSummand, double zweiterSummand)
-        {
-            double summe = ersterSummand + zweiterSummand;
-
-            return summe;
-        }
-
-        static double Subtrahiere(double minuend, double subtrahent)
-        {
-            double differenz = minuend - subtrahent;
-
-            return differenz;
-        }
-        static double Multipizieren(double minuend, double subtrahent)
-        {
-            double differenz = minuend * subtrahent;
-
-            return differenz;
-        }
-        static double Dividieren(double minuend, double subtrahent)
-        {
-            double differenz = minuend / subtrahent;
-
-            return differenz;
-        }
+        
 
 
     }
