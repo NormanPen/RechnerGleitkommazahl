@@ -6,7 +6,7 @@ namespace RechnerGleitkommazahl
 {
     class RechnerModel
     {
-        public double Resultat { get;private set; }
+        public double Resultat { get; private set; }
 
         public RechnerModel()
         {

@@ -7,10 +7,10 @@ namespace RechnerGleitkommazahl
         
         static void Main(string[] args)
         {
-            // User Story "Addieren": Als Benutzer möchte ich zwei Zahlen eingeben, um deren Summe berechnen zu lassen.
-            string ersterSummand = HoleBenutzerEingabe("Bitte gib die erste Zahl ein: ");
-            string zweiterSummand = HoleBenutzerEingabe("Bitte gib eine Zahl ein: ");
-            string operation = HoleBenutzerEingabe("Bitte gib die asuzuführende Operation ein (+, -, /,oder *): ");
+            ConsoleView view = new ConsoleView();
+            string ersterSummand = view.HoleBenutzerEingabe("Bitte gib die erste Zahl ein: ");
+            string zweiterSummand = view.HoleBenutzerEingabe("Bitte gib eine Zahl ein: ");
+            string operation = view.HoleBenutzerEingabe("Bitte gib die asuzuführende Operation ein (+, -, /,oder *): ");
 
             // Wandel Text in Gleitkommazahl
             // TODO: Auslagern in Methode, wenn Struktur umfangreicher geworden ist.
@@ -23,40 +23,15 @@ namespace RechnerGleitkommazahl
 
 
             // Ausgabe
-            GibResultatAus(model.Resultat, operation);
-            HoleBenutzerEingabe("Zum beenden bitte Return drücken!");
+          
+            view.GibResultatAus(model.Resultat, operation);
+            view.HoleBenutzerEingabe("Zum beenden bitte Return drücken!");
+            
 
 
         }
 
-        static void GibResultatAus(double resultat, string operation)
-        {
-            switch (operation)
-            {
-                case "+":
-                    Console.WriteLine("Die Summe ist: {0}", resultat);
-                    break;
-                case "-":
-                    Console.WriteLine("Die Summe ist: {0}", resultat);
-                    break;
-                case "/":
-                    Console.WriteLine("Die Summe ist: {0}", resultat);
-                    break;
-                case "*":
-                    Console.WriteLine("Die Summe ist: {0}", resultat);
-                    break;
-                default:
-                    Console.WriteLine("Du hast eine ungültige Auswahl gestroffen.");
-                    break;
-            }
-        }
-        static string HoleBenutzerEingabe(string ausgabeText)
-        {
-            Console.Write(ausgabeText);
-            string summand = Console.ReadLine();
 
-            return summand;
-        }
         
 
 
