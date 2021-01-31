@@ -7,7 +7,8 @@ namespace RechnerGleitkommazahl
         
         static void Main(string[] args)
         {
-            ConsoleView view = new ConsoleView();
+            RechnerModel model = new RechnerModel();
+            ConsoleView view = new ConsoleView(model);
             string ersterSummand = view.HoleBenutzerEingabe("Bitte gib die erste Zahl ein: ");
             string zweiterSummand = view.HoleBenutzerEingabe("Bitte gib eine Zahl ein: ");
             string operation = view.HoleBenutzerEingabe("Bitte gib die asuzuführende Operation ein (+, -, /,oder *): ");
@@ -18,13 +19,13 @@ namespace RechnerGleitkommazahl
             double zweiteZahl = Convert.ToDouble(zweiterSummand);
 
             //Berechnung ausführen
-            RechnerModel model = new RechnerModel();
+
             model.Berechne(ersteZahl, zweiteZahl, operation);
 
 
             // Ausgabe
           
-            view.GibResultatAus(model.Resultat, operation);
+            view.GibResultatAus(operation);
             view.HoleBenutzerEingabe("Zum beenden bitte Return drücken!");
             
 
