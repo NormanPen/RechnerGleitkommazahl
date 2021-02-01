@@ -14,7 +14,6 @@ namespace RechnerGleitkommazahl
             string operation = view.HoleBenutzerEingabe("Bitte gib die asuzuführende Operation ein (+, -, /,oder *): ");
 
             // Wandel Text in Gleitkommazahl
-            // TODO: Auslagern in Methode, wenn Struktur umfangreicher geworden ist.
             double ersteZahl = Convert.ToDouble(ersterSummand);
             double zweiteZahl = Convert.ToDouble(zweiterSummand);
 
