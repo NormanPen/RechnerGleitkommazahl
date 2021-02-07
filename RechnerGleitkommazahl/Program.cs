@@ -9,10 +9,9 @@ namespace RechnerGleitkommazahl
         {
             RechnerModel model = new RechnerModel();
             ConsoleView view = new ConsoleView(model);
-            string ersterSummand = view.HoleBenutzerEingabe("Bitte gib die erste Zahl ein: ");
-            string zweiterSummand = view.HoleBenutzerEingabe("Bitte gib eine Zahl ein: ");
-            string operation = view.HoleBenutzerEingabe("Bitte gib die asuzuführende Operation ein (+, -, /,oder *): ");
-
+            string ersterSummand = view.HoleZahlVonBenutzer();
+            string operation = view.HoleOperatorVonBenutzer();
+            string zweiterSummand = view.HoleZahlVonBenutzer();
             // Wandel Text in Gleitkommazahl
             double ersteZahl = Convert.ToDouble(ersterSummand);
             double zweiteZahl = Convert.ToDouble(zweiterSummand);
@@ -25,8 +24,8 @@ namespace RechnerGleitkommazahl
             // Ausgabe
           
             view.GibResultatAus(operation);
-            view.HoleBenutzerEingabe("Zum beenden bitte Return drücken!");
-            
+            view.WarteAufEndeDurchBenutzer();
+
 
 
         }
