@@ -26,18 +26,15 @@ namespace RechnerGleitkommazahl
             Console.Write("Bitte gib die auszuführende Operation ein (+, -, /, *):");
             return Console.ReadLine();
         }
-        public string HoleBenutzerEingabe(string ausgabeText)
-        {
-            Console.Write(ausgabeText);
-            return Console.ReadLine();
-        }
 
         public void WarteAufEndeDurchBenutzer()
         {
             Console.Write("Zum beenden bitte Return drücken!");
             Console.ReadLine();
         }
+
         public void GibResultatAus()
+        { 
             switch (model.Operation)
             {
                 case "+":
