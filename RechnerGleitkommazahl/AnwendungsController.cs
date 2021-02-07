@@ -16,12 +16,10 @@ namespace RechnerGleitkommazahl
 
         public void Ausführen()
         {
-            string ersterSummand = view.HoleZahlVonBenutzer();
+            double ersteZahl = view.HoleZahlVonBenutzer();
             string operation = view.HoleOperatorVonBenutzer();
-            string zweiterSummand = view.HoleZahlVonBenutzer();
-            // Wandel Text in Gleitkommazahl
-            double ersteZahl = Convert.ToDouble(ersterSummand);
-            double zweiteZahl = Convert.ToDouble(zweiterSummand);
+            double zweiteZahl = view.HoleZahlVonBenutzer();           
+
 
             //Berechnung ausführen
 

@@ -12,7 +12,7 @@ namespace RechnerGleitkommazahl
             this.model = model;
         }
 
-        public string HoleZahlVonBenutzer()
+        public double HoleZahlVonBenutzer()
         {
             Console.Write("Bitte gib eine Zahl für die Berechnung ein: ");
             return Console.ReadLine();
