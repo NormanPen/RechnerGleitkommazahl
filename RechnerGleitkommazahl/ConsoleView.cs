@@ -14,8 +14,11 @@ namespace RechnerGleitkommazahl
 
         public double HoleZahlVonBenutzer()
         {
+            string zahl;
             Console.Write("Bitte gib eine Zahl für die Berechnung ein: ");
-            return Console.ReadLine();
+            zahl = Console.ReadLine();
+
+            return Convert.ToDouble(zahl);
         }
 
         public string HoleOperatorVonBenutzer()
@@ -34,9 +37,8 @@ namespace RechnerGleitkommazahl
             Console.Write("Zum beenden bitte Return drücken!");
             Console.ReadLine();
         }
-        public void GibResultatAus(string operation)
-        {
-            switch (operation)
+        public void GibResultatAus()
+            switch (model.Operation)
             {
                 case "+":
                     Console.WriteLine("Die Summe ist: {0}", model.Resultat);

@@ -22,13 +22,11 @@ namespace RechnerGleitkommazahl
 
 
             //Berechnung ausführen
-
             model.Berechne(ersteZahl, zweiteZahl, operation);
 
 
             // Ausgabe
-
-            view.GibResultatAus(operation);
+            view.GibResultatAus();
             view.WarteAufEndeDurchBenutzer();
         }
     }
